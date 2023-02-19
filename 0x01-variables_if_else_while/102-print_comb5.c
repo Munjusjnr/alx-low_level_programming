@@ -25,6 +25,10 @@ int main(void)
 	putchar (l + '0');
 	if (i != 9 || j != 8 || k != 9 || l != 9)
 	{
+	putchar ('\n');
+	}
+	else
+	{
 	putchar (',');
 	putchar (' ');
 	}
@@ -32,6 +36,5 @@ int main(void)
 	}
 	}
 	}
-	putchar ('\n');
 	return (0);
 }

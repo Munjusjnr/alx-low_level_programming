@@ -18,11 +18,8 @@ int main(void)
 	putchar (' ');
 	putchar (num2 / 10 + '0');
 	putchar (num2 % 10 + '0');
-	if (num1 != 99 || num2 != 99)
-	{
-	putchar (',');
-	putchar (' ');
-	}
+	putchar (num1 == 99 && num2 == 99 ? '\n' : ',');
+	putchar (num1 == 99 && num2 == 99 ? '\0' : ' ');
 	}
 	}
 	return (0);

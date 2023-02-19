@@ -7,32 +7,21 @@
 
 int main(void)
 {
-	int i, j, k, l;
+	int num1, num2;
 
-	for (i = 0; i < 10; i++)
+	for (num1 = 0; num1 < 100; num1++)
 	{
-	for (j = 0; j < 10; j++)
+	for (num2 = num1; num2 < 100; num2++)
 	{
-	for (k = i; k < 10; k++)
-	{
-	l = (k == i) ? j + 1 : 0;
-	for (; 1 < 9; l++)
-	{
-	putchar (i + '0');
-	putchar (j + '0');
+	putchar (num1 / 10 + '0');
+	putchar (num1 % 10 + '0');
 	putchar (' ');
-	putchar (k + '0');
-	putchar (l + '0');
-	if (i == 9 && j == 9 && k == 9 && l == 9)
-	{
-	putchar ('\n');
-	}
-	else
+	putchar (num2 / 10 + '0');
+	putchar (num2 % 10 + '0');
+	if (num1 != 99 || num2 != 99)
 	{
 	putchar (',');
 	putchar (' ');
-	}
-	}
 	}
 	}
 	}

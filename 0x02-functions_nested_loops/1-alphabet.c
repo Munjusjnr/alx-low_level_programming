@@ -1,10 +1,8 @@
 #include "main.h"
 
 /**
- * function_name -  print_alphabet
- * Description: print_alphabet function prints all alphabets in
- * lower cases
- * Return: Always 0 (success)
+ *  print_alphabet - print alphabets, in lower, followed by a new line
+ * Return - void
  */
 
 void print_alphabet(void)

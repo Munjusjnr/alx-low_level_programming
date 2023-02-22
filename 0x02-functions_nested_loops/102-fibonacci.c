@@ -10,18 +10,16 @@
 int main(void)
 {
 	int fibo1, fibo2, x;
-	long int next_fib;
+	long int fib[50];
 
-	fibo1 = 1;
-	fibo2 = 2;
+	fibo1[] = 1;
+	fibo2[] = 2;
 
-	printf("%d, %d", fibo1, fibo2);
-	for (x = 3; x <= 50; x++)
+	printf("%ld, %ld", fibo1[], fibo2[]);
+	for (x = 2; x < 50; x++)
 	{
-	next_fib = fibo1 + fibo2;
-	printf(", %ld", next_fib);
-	fibo1 = fibo2;
-	fibo2 = next_fib;
+	fib[i] = fib[i - 1] + fib[i - 2];
+	printf(", %ld", fib[i]);
 	}
 	printf("\n");
 	return (0);

@@ -9,15 +9,15 @@
 
 int main(void)
 {
-	int fibo1 = 1, int fibo = 2, int next_fibo, int x;
+	int fibo1 = 1, int fibo2 = 2, int next_fib, int x;
 
 	printf("%d, %d", fibo1, fibo2);
 	for (x = 3; x <= 50; x++)
 	{
-	next_fibo = fibo1 + fibo2;
-	printf(", %d", next_fibo);
-	fibo1 = fib02;
-	fib02 = next_fibo;
+	next_fib = fibo1 + fibo2;
+	printf(", %d", next_fib);
+	fibo1 = fibo2;
+	fibo2 = next_fib;
 	}
 	printf("\n");
 	return (0);

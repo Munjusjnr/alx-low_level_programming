@@ -1,20 +1,29 @@
 #include "main.h"
 
 /**
- * jack_bauer - This function output the timeline
- * used in jack_bauer series
+ * main - Entry point of code to call function jack bauer
+ *
+ * jack_bauer - print output in hour and minutes the
+ * timeline of series jack bauer.
+ *
  * Return: void when (success)
  */
 
 void jack_bauer(void)
 {
-	int hour, minute;
+	int h, m;
 
-	for (hour = 0; hour < 24; hour++)
+	for (h = 0; h < 24; h++)
 	{
-	for (minute = 0; minute < 60; minute++)
+	for (m = 0; m < 60; m++)
 	{
-	_putchar ("%02d:%02d\n", hour, minute);
+	_putchar ("%02d:%02d\n", h, m);
 	}
 	}
+}
+
+int main(void)
+{
+	jack_bauer();
+	return (0);
 }

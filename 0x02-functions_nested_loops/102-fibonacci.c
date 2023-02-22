@@ -9,13 +9,13 @@
 
 int main(void)
 {
-	int fibo1, fibo2, x;
+	int x;
 	long int fib[50];
 
-	fibo1[0] = 1;
-	fibo2[1] = 2;
+	fib[0] = 1;
+	fib[1] = 2;
 
-	printf("%ld, %ld", fibo1[0], fibo2[1]);
+	printf("%ld, %ld", fib[0], fib[1]);
 	for (x = 2; x < 50; x++)
 	{
 	fib[x] = fib[x - 1] + fib[x - 2];

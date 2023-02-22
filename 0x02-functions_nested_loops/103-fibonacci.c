@@ -18,9 +18,9 @@ int main(void)
 
 	while (num2 <= 4000000)
 	{
-	temp = second;
-	second += first;
-	first = temp;
+	temp = num2;
+	num2 += num1;
+	num1 = temp;
 
 	if (num2 % 2 == 0)
 	{

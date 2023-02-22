@@ -18,7 +18,7 @@ int main(void)
 	for (x = 3; x <= 50; x++)
 	{
 	next_fib = fibo1 + fibo2;
-	printf(", %d", next_fib);
+	printf(", %ld", next_fib);
 	fibo1 = fibo2;
 	fibo2 = next_fib;
 	}

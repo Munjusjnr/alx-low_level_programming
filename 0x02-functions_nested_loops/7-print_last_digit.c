@@ -10,20 +10,15 @@
 
 int print_last_digit(int num)
 {
-	int last_digit;
+	int last_digit = num % 10;
 
-	if (num == INT_MIN)
-	{
-	last_digit = 8;
-	}
-	else
-	{
 	if (num < 0)
 	{
 	num = -num;
 	}
-	last_digit = num % 10;
-	}
+	else
+	{
 	_putchar (last_digit);
+	}
 	return (last_digit);
 }

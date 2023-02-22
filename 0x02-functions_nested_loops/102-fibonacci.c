@@ -12,14 +12,14 @@ int main(void)
 	int fibo1, fibo2, x;
 	long int fib[50];
 
-	fibo1[] = 1;
-	fibo2[] = 2;
+	fibo1[0] = 1;
+	fibo2[1] = 2;
 
-	printf("%ld, %ld", fibo1[], fibo2[]);
+	printf("%ld, %ld", fibo1[0], fibo2[1]);
 	for (x = 2; x < 50; x++)
 	{
-	fib[i] = fib[i - 1] + fib[i - 2];
-	printf(", %ld", fib[i]);
+	fib[x] = fib[x - 1] + fib[x - 2];
+	printf(", %ld", fib[x]);
 	}
 	printf("\n");
 	return (0);

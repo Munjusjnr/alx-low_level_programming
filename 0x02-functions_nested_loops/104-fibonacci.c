@@ -21,7 +21,7 @@ int main(void)
 	temp = b;
 	b = a + b;
 	a = temp;
-	printf("%.0f", b)
+	printf("%.0f", b);
 	if (i < 98)
 	{
 	printf(", ");

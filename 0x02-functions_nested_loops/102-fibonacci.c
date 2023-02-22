@@ -9,7 +9,10 @@
 
 int main(void)
 {
-	int fibo1 = 1, int fibo2 = 2, int next_fib, int x;
+	int fibo1, fibo2, next_fib, x;
+
+	fibo1 = 1;
+	fibo2 = 2;
 
 	printf("%d, %d", fibo1, fibo2);
 	for (x = 3; x <= 50; x++)

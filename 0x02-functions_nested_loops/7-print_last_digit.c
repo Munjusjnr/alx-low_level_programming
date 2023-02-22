@@ -2,6 +2,17 @@
 #include "main.h"
 
 /**
+ * abs_val - This function return absolute value of integer
+ * * @n: the input integer
+ * Return: Absolute value of integer
+ */
+
+int abs_val(int n)
+{
+	return (n < 0 ? -n : n);
+}
+
+/**
  * print_last_digit - This function get input numbers
  * output its last digit
  * * @num: So this parameter has to do with an integer
@@ -11,6 +22,8 @@
 int print_last_digit(int num)
 {
 	int last_digit;
+
+	num = abs_val(num);
 
 	last_digit = num % 10;
 	_putchar (last_digit + '0');

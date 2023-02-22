@@ -9,7 +9,8 @@
 
 int main(void)
 {
-	int fibo1, fibo2, next_fib, x;
+	int fibo1, fibo2, x;
+	long int next_fib;
 
 	fibo1 = 1;
 	fibo2 = 2;

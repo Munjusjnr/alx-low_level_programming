@@ -9,10 +9,10 @@
 
 int _atoi(char *s)
 {
-	int res = 0;
-	int sign = 1;
+	unsigned int res = 0;
+	unsigned int sign = 1;
 	unsigned int x = 0;
-	int num_started = 0;
+	unsigned int num_started = 0;
 
 	while (s[x] != '\0')
 	{

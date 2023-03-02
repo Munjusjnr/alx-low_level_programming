@@ -3,28 +3,27 @@
 
 /**
  * leet - this functions encodes different numbers for characters
- * *@x: character to receive string
+ * *@s: character to receive string
  * Return: Encoded message
  */
 
-char *leet(char *x)
+char *leet(char *s)
 {
-	static char encode[1000];
-	char leetChars[] = {'4', '3', '0', '7', '1'};
-	int i, j, len;
+	char swaps[5] = {'4', '3', '0', '7', '1'};
+	char letters[5][2] = {{'a', 'A'}, {'e', 'E'}, {'o', 'O'},
+	{'t', 'T'}, {'l', 'L'} };
+	int i, j;
 
-	len = strlen(x);
-	for (i = 0; i < len; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-	encode[i] = x[i];
 	for (j = 0; j < 5; j++)
 	{
-	if (x[i] == 'a' + j || x[i] == 'A' + j)
+	if (s[i] == letters[j][0] || s[i] == letters[j][1])
 	{
-		encode[i] = leetChars[j];
+		s[i] = swaps[j];
 		break;
 	}
 	}
 	}
-	return (encode);
+	return (s);
 }

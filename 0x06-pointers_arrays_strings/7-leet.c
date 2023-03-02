@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 
 /**
  * leet - this functions encodes different numbers for characters
@@ -9,33 +10,20 @@
 char *leet(char *x)
 {
 	static char encode[1000];
-	int i;
+	char leetChars[] = {'4', '3', '0', '7', '1'};
+	int i, j, len;
 
-	for (i = 0; x[i] != '\0'; i++)
-	{
-	if (x[i] == 'a' || x[i] == 'A')
-	{
-		encode[i] = '4';
-	}
-	else if (x[i] == 'e' || x[i] == 'E')
-	{
-		encode[i] = '3';
-	}
-	else if (x[i] == 'o' || x[i] == 'O')
-	{
-		encode[i] = '0';
-	}
-	else if (x[i] == 't' || x[i] == 'T')
-	{
-		encode[i] = '7';
-	}
-	else if (x[i] == 'l' || x[i] == 'L')
-	{
-		encode[i] = '1';
-	}
-	else
+	len = strlen(x);
+	for (i = 0; i < len; i++)
 	{
 	encode[i] = x[i];
+	for (j = 0; j < 5; j++)
+	{
+	if (x[i] == 'a' + j || x[i] == 'A' + j)
+	{
+		encode[i] = leetChars[j];
+		break;
+	}
 	}
 	}
 	return (encode);

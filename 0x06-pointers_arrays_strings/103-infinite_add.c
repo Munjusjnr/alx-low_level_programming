@@ -13,7 +13,10 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int carry, sum, i, j, len1, len2, max_len;
 
-	len1 = 0; len2 = 0; carry = 0; sum = 0;
+	len1 = 0;
+	len2 = 0;
+	carry = 0;
+	sum = 0;
 	/* Calculate the length of each input string */
 	while (n1[len1] != '\0')
 		len1++;

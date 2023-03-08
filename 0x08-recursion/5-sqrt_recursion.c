@@ -24,14 +24,15 @@ int _sqrt_recursion(int n)
  */
 int _sqrt_helper(int n, int start, int end)
 {
-	int mid = (start + end) / 2;
-
-	int square = mid * mid;
+	int mid, square;
 
 	if (start > end)
 	{
 		return (-1);
 	}
+	mid = (start + end) / 2;
+	square = mid * mid;
+
 	if (square == n)
 	{
 		return (mid);

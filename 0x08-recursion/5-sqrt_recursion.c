@@ -26,13 +26,19 @@ int _sqrt_helper(int n, int start, int end)
 {
 	int mid, square;
 
-	if (start > end)
-	{
-		return (-1);
-	}
 	mid = (start + end) / 2;
 	square = mid * mid;
-
+	if (start == end)
+	{
+		if (square == n)
+		{
+		return (mid);
+		}
+		else
+		{
+		return (-1);
+		}
+	}
 	if (square == n)
 	{
 		return (mid);

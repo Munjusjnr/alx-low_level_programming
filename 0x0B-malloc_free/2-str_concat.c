@@ -15,18 +15,15 @@ char *str_concat(char *s1, char *s2)
 	char *p;
 	size_t len1, len2;
 
-	if (s1 == NULL && s2 == NULL)
+	if (s1 == NULL)
 	{
-		return ("");
+		s1 = ("");
 	}
-	else if (s1 == NULL)
+	if (s2 == NULL)
 	{
-		return (s2);
+		s2 = ("");
 	}
-	else if (s2 == NULL)
-	{
-		return (s1);
-	}
+
 	len1 = strlen(s1);
 	len2 = strlen(s2);
 
@@ -36,8 +33,9 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
-	strcpy(p, s1);
-	strcat(p, s2);
+	memcpy(p, s1, len1);
+	memcpy(p + len1, s2, len2);
+	p[len1 + len2] = '\0';
 
 	return (p);
 }

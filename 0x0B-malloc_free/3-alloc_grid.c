@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * alloc_grind - A function that returns a pointer to a 2D array
@@ -8,7 +9,7 @@
  * Return: A pointer maze when successful , null if otherwise
  */
 
-int **alloc_grind(int width, int height)
+int **alloc_grid(int width, int height)
 {
 	int **maze, i;
 

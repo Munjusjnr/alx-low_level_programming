@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * alloc_grind - A function that returns a pointer to a 2D array
+ * alloc_grid - A function that returns a pointer to a 2D array
  * *@width: Holds the outer array
  * *@height: Holds the inner array
  * Return: A pointer maze when successful , null if otherwise
@@ -18,14 +18,19 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 	}
 	maze = malloc(height * sizeof(int));
-	maze[0] = malloc(width * height * sizeof(int));
-	for (i = 0; i < height; i++)
-	{
-		maze[i] = maze[0] + i * width;
-	}
 	if (maze == NULL)
 	{
 		return (NULL);
+	}
+	maze[0] = malloc(width * height * sizeof(int));
+	if (maze[0] == NULL)
+	{
+		free(maze);
+		return (NULL);
+	}
+	for (i = 1; i < height; i++)
+	{
+		maze[i] = maze[i - 1] + width;
 	}
 	return (maze);
 }

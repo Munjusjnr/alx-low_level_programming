@@ -11,7 +11,7 @@
 
 int **alloc_grid(int width, int height)
 {
-	int **maze, i;
+	int **maze, i, j;
 
 	if (width <= 0 || height <= 0)
 	{
@@ -22,15 +22,22 @@ int **alloc_grid(int width, int height)
 	{
 		return (NULL);
 	}
-	maze[0] = malloc(width * height * sizeof(int));
-	if (maze[0] == NULL)
+	for (i = 0; i < height; i++)
 	{
+	maze[i] = malloc(width * sizeof(int));
+	if (maze[i] == NULL)
+	{
+		for (j = 0; j < i; j++)
+		{
+			free(maze[j]);
+		}
 		free(maze);
 		return (NULL);
 	}
-	for (i = 1; i < height; i++)
+	for (j = 0; j < width; j++)
 	{
-		maze[i] = maze[i - 1] + width;
+		maze[i][j] = 0;
+	}
 	}
 	return (maze);
 }

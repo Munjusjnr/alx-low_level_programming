@@ -17,8 +17,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	{
 		return (NULL);
 	}
-	arr = malloc(nmemb * size);
-	memset(arr, 0, nmemb * size);
+	arr = calloc(nmemb * size);
 	if (arr == NULL)
 	{
 		return (NULL);

@@ -6,7 +6,7 @@
  * new_dog - funtion that creates new struct
  * *@name: A pointer to character name
  * *@age: age of dog
- * *@owner: A character to owner
+ * *@owner: A point to character owner
  * Return: new struct
  */
 
@@ -29,8 +29,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	{
 		return (NULL);
 	}
-	strcpy(res->name, name);
-	strcpy(res->owner, owner);
+	memcpy(res->name, name, strlen(name) + 1);
+	memcpy(res->owner, owner, strlen(owner) + 1);
 	res->age = age;
 	if (res->age < 0)
 	{

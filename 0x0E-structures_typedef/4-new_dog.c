@@ -19,12 +19,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 	{
 		return (NULL);
 	}
-	res->name = malloc(strlen(name + 1));
+	res->name = malloc(strlen(name) + 1);
 	if (res->name == NULL)
 	{
 		return (NULL);
 	}
-	res->owner = malloc(strlen(name + 1));
+	res->owner = malloc(strlen(owner) + 1);
 	if (res->owner == NULL)
 	{
 		return (NULL);

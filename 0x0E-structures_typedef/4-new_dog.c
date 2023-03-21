@@ -20,17 +20,17 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 	res->name = malloc(strlen(name + 1));
-	if(res->name == NULL)
+	if (res->name == NULL)
 	{
 		return (NULL);
 	}
 	res->owner = malloc(strlen(name + 1));
-	if(res->owner == NULL)
+	if (res->owner == NULL)
 	{
 		return (NULL);
 	}
-	memcpy(res->name, name, strlen(name + 1));
-	memcpy(res->owner, owner, strlen(owner + 1));
+	strcpy(res->name, name);
+	strcpy(res->owner, owner);
 	res->age = age;
 	return (res);
 }

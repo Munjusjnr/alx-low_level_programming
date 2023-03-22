@@ -1,4 +1,5 @@
 #include "function_pointers.h"
+#include <string.h>
 
 /**
  * print_name - function that prints a name
@@ -9,5 +10,10 @@
 
 void print_name(char *name, void (*f)(char *))
 {
+	int len = strlen(name) + 1;
+
+	if (len != '\0')
+	{
 	(*f)(name);
+	}
 }

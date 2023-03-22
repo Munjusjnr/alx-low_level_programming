@@ -10,10 +10,8 @@
 
 void print_name(char *name, void (*f)(char *))
 {
-	int len = strlen(name) + 1;
-
-	if (len != '\0')
+	if (name != NULL)
 	{
-	(*f)(name);
+	f(name);
 	}
 }

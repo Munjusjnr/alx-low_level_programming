@@ -15,17 +15,19 @@ void print_all(const char * const format, ...)
 
 	va_start(args, format);
 
-	if (format)
+	if (format == NULL)
 	{
+		return;
+	}
 	n = 0;
-	while (format[n] && format[n] != (n - 1))
+	while (format[n])
 	{
 		switch (format[n])
 		{
 		case 's':
 			if (p == NULL)
 			{
-				p = ("(nil)");
+				p = "(nil)";
 			}
 			printf("%s%s", sep, va_arg(args, char *));
 			break;
@@ -44,7 +46,6 @@ void print_all(const char * const format, ...)
 		}
 	sep = ", ";
 	n++;
-	}
 	}
 	printf("\n");
 	va_end(args);

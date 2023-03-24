@@ -18,14 +18,14 @@ void print_all(const char * const format, ...)
 	if (format)
 	{
 	n = 0;
-	while (format[n])
+	while (format[n] && format[n] != (n - 1))
 	{
 		switch (format[n])
 		{
 		case 's':
 			if (p == NULL)
 			{
-				p = ("(nil)");
+				p = "(nil)";
 			}
 			printf("%s%s", sep, va_arg(args, char *));
 			break;

@@ -37,13 +37,13 @@ int main(int argc, char **argv)
 	if (argc != 2)
 	{
 		printf("Error\n");
-		return (1);
+		exit(1);
 	}
 	n_bytes = atoi(argv[1]);
 	if (n_bytes < 0)
 	{
 		printf("Error\n");
-		return (2);
+		exit(2);
 	}
 	print_opcodes(n_bytes);
 	return (0);

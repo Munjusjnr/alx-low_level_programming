@@ -8,7 +8,7 @@
  *
  * Return: Always 0.
  */
-size_t list_len(const list_t *h);
+
 int main(void)
 {
     list_t *head;

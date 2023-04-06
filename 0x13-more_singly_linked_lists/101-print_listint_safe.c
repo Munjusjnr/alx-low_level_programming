@@ -18,18 +18,19 @@ size_t print_listint_safe(const listint_t *head)
 	{
 		printf("[%p] %d\n", (void *)slow, slow->n);
 		slow = slow->next;
-		fast = fast->next;
+		fast = fast->next->next;
 		if (slow == fast)
 		{
-		printf("-> [%p] %d\n", (void *)slow, slow->n);
-		count++;
-		slow = head;
+			printf("-> [%p] %d\n", (void *)slow, slow->n);
+			slow = head;
 		while (slow != fast)
 		{
 			printf("[%p] %d\n", (void *)slow, slow->n);
 			slow = slow->next;
-			fast = fast->next;
+			fast = fast->next->next;
+			count++;
 		}
+		return (count);
 		}
 		count++;
 	}

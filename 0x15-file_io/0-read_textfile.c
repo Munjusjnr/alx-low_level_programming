@@ -26,12 +26,17 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (buffer == NULL)
 	{
 		close(ptr);
-		free(buffer);
 		return (0);
 	}
 	toread = read(ptr, buffer, letters);
-	towrite = write(1, buffer, toread);
+	towrite = write(STDOUT_FILENO, buffer, toread);
+	if (towrite < 0 || towrite != toread)
+	{
+		close(ptr);
+		free(buffer);
+		return (0);
+	}
 	free(buffer);
 	close(ptr);
-	return (toread > 0 && towrite == toread ? toread : 0);
+	return (toread > 0 ? toread : 0);
 }

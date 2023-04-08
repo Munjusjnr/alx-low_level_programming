@@ -1,5 +1,4 @@
 #include "main.h"
-#define MODE 664
 #define BUFF_SIZE 1024
 /**
  * main - Entry point to code
@@ -25,10 +24,12 @@ int main(int argc, char *argv[])
 		dprintf(2, "Error: Can't read from file argv[1]\n");
 		exit(98);
 	}
-	dest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, MODE);
+	dest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 664);
 	if (dest < 0)
+	{
 		dprintf(2, "Error: Can't write to argv[2]\n");
 		exit(99);
+	}
 	while (1)
 	{
 		toread = read(src, buffer, BUFF_SIZE);
@@ -46,7 +47,9 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 	if ((close(dest)) < 0)
+	{
 		dprintf(2, "Error: Can't close fd %d\n", dest);
 		exit(100);
+	}
 	return (0);
 }

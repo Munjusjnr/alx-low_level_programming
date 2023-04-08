@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 	{
 		outer("Error: Can't write to %s\n", 99);
 	}
-	while ((toread = read(src, buffer, BUFF_SIZE) > 0))
+	while ((toread = read(src, buffer, BUFF_SIZE)) > 0)
 	{
 		towrite = write(dest, buffer, toread);
 		if (towrite != toread)

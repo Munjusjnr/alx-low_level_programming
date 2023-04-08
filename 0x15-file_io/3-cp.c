@@ -9,7 +9,7 @@
  */
 void outer(char *msg, int code)
 {
-	dprintf(STDERR_FILENO, "%s\n", msg);
+	dprintf(STDERR_FILENO, msg, errno, strerror(errno));
 	exit(code);
 }
 /**
@@ -27,38 +27,37 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		outer("Usage: cp file_from file_to", 97);
+		outer("Usage: cp file_from file_to\n", 97);
 	}
 	src = open(argv[1], O_RDONLY);
 	if (src < 0)
 	{
-		outer("Error: Can't read from file %s", 98);
+		outer("Error: Can't read from file %s\n", 98);
 	}
 	dest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, MODE);
 	if (dest < 0)
 	{
-		outer("Error: Can't write to %s", 99);
+		outer("Error: Can't write to %s\n", 99);
 	}
-	while (1)
+	while ((toread = read(src, buffer, BUFF_SIZE) > 0))
 	{
-		toread = read(src, buffer, BUFF_SIZE);
-		if (toread <= 0)
-		{
-			break;
-		}
 		towrite = write(dest, buffer, toread);
-		if (towrite <= 0)
+		if (towrite != toread)
 		{
-			break;
+			outer("Error: Can't write to %s\n", 99);
 		}
+	}
+	if (toread < 0)
+	{
+		outer("Error: Can't read from file %s\n", 98);
 	}
 	if ((close(src)) < 0)
 	{
-		outer("Error: Can't close fd %d", 100);
+		outer("Error: Can't close fd %d\n", 100);
 	}
 	if ((close(dest)) < 0)
 	{
-		outer("Error: Can't close fd %d", 100);
+		outer("Error: Can't close fd %d\n", 100);
 	}
 	return (0);
 }

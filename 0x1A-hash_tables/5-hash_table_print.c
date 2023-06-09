@@ -24,7 +24,7 @@ void hash_table_print(const hash_table_t *ht)
 			{
 				printf(", ");
 			}
-			printf("%s: %s", current->key, current->value);
+			printf("'%s': '%s'", current->key, current->value);
 			first_hnode = 0;
 			current = current->next;
 		}
